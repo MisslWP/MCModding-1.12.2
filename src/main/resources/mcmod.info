@@ -1,9 +1,10 @@
 [
 {
-  "modid": "buffs",
-  "name": "Buffs",
+  "modid": "funmedicine",
+  "name": "TarkovCraft Medicine",
   "description": "Custom temporary effects system demonstration",
-  "version": "1.0",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
   "screenshots": [],
   "dependencies": []
 }

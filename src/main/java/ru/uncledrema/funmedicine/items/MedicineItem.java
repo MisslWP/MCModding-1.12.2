@@ -1,7 +1,6 @@
 package ru.uncledrema.funmedicine.items;
 
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -23,10 +22,10 @@ public class MedicineItem extends ItemFood {
     private boolean hasPotionEffect;
     public MedicineItem(int uses, int stackSize, String name) {
         super(0, 0f, false);
+        this.setCreativeTab(BuffsMain.MEDICINE);
         this.setAlwaysEdible();
         this.uses = uses;
         this.setMaxDamage(uses);
-        this.setCreativeTab(CreativeTabs.BREWING);
         this.setMaxStackSize(stackSize);
         this.setRegistryName(new ResourceLocation(BuffsMain.MODID, name));
         this.setUnlocalizedName(name);
@@ -51,7 +50,7 @@ public class MedicineItem extends ItemFood {
             }
             EntityPlayer entityplayer = (EntityPlayer)entityLiving;
             entityplayer.getFoodStats().addStats(this, stack);
-            worldIn.playSound((EntityPlayer)null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
+            worldIn.playSound(null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, worldIn.rand.nextFloat() * 0.1F + 0.9F);
             this.onFoodEaten(stack, worldIn, entityplayer);
             entityplayer.addStat(StatList.getObjectUseStats(this));
 

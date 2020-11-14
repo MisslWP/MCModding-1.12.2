@@ -134,8 +134,9 @@ public class BuffsEvents {
 			if (event.getTarget() instanceof EntityLivingBase) {
 				
 				EntityPlayer player = event.getEntityPlayer();
-				
-				if (player.getHeldItemMainhand() != null && player.getHeldItemMainhand().getItem() == Items.ROTTEN_FLESH) {
+
+				player.getHeldItemMainhand();
+				if (player.getHeldItemMainhand().getItem() == Items.ROTTEN_FLESH) {
 				
 					IBuffs buffs = event.getTarget().getCapability(BuffsProvider.BUFFS_CAP, null);
 				
